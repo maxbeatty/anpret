@@ -1,0 +1,599 @@
+/* Please don't judge me on this CSS */
+
+/*   
+Theme Name: breadbox
+Theme URI: https://github.com/maxbeatty/breadbox
+Description: Based on http://html5reset.org, stripped down, and built up hopefully to one day be a parent (theme).
+Author: Max Beatty
+Author URI: http://maxbeatty.com
+Version: 0.1
+*/
+
+/* reset */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, menu, time, mark, audio, video {margin: 0;padding: 0;border: 0;outline: 0;font-size: 100%;vertical-align: baseline;background: transparent;}
+article, aside, figure, footer, header, hgroup, nav, section {display: block;}
+
+/* Responsive images and other embedded objects
+   Note: keeping IMG here will cause problems if you're using foreground images as sprites, like, say for Google Maps custom placemarkers. 
+   There has been a report of problems with standard Google maps as well, but we haven't been able to duplicate or diagnose the issue. */
+img,object,embed {max-width: 100%;}
+
+/* force a vertical scrollbar to prevent a jumpy page */
+html {overflow-y: scroll;}
+
+ul {list-style: none;}
+blockquote, q {quotes: none;}
+blockquote:before, 
+blockquote:after, 
+q:before, 
+q:after {content: ''; content: none;}
+
+a {margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; background: transparent;}
+
+del {text-decoration: line-through;}
+
+abbr[title], dfn[title], acronym {border-bottom: 1px dotted #000; cursor: help;}
+
+/* tables still need cellspacing="0" in the markup */
+table {border-collapse: collapse; border-spacing: 0;}
+th {font-weight: bold; vertical-align: bottom;}
+td {font-weight: normal; vertical-align: top;}
+td, td img {vertical-align: top;}
+strong, th {font-weight: bold;}
+hr {display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0;}
+input, select {vertical-align: middle;}
+pre {
+  white-space: pre; /* CSS2 */
+  white-space: pre-wrap; /* CSS 2.1 */
+  white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
+  word-wrap: break-word; /* IE */
+}
+input[type="radio"] {vertical-align: text-bottom;}
+input[type="checkbox"] {vertical-align: bottom; *vertical-align: baseline;}
+.ie6 input {vertical-align: text-bottom;}
+select, input, textarea {font: 99% sans-serif;}
+ 
+/* Accessible focus treatment
+  people.opera.com/patrickl/experiments/keyboard/test */
+a:hover, a:active {outline: none;}
+
+small {font-size: 85%;}
+sub, sup {font-size: 75%; line-height: 0; position: relative;}
+sup {top: -0.5em;}
+sub {bottom: -0.25em;}
+
+/* standardize any monospaced elements */
+pre, code, kbd, samp {font-family: monospace, sans-serif;}
+
+/* hand cursor on clickable elements */
+.clickable,
+label, 
+input[type=button], 
+input[type=submit], 
+button {cursor: pointer;}
+
+/* Webkit browsers add a 2px margin outside the chrome of form elements */
+button, input, select, textarea {margin: 0;}
+
+/* make buttons play nice in IE */
+button {width: auto; overflow: visible;}
+
+/* let's clear some floats */
+.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }  
+.clearfix:after { clear: both; }  
+.clearfix { zoom: 1; }  
+
+/* Ok, this is where the fun starts.
+-------------------------------------------------------------------------------*/
+
+body {
+  background: #FFF url('img/tattersall-10.png') 0 0 repeat fixed;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+body, select, input, textarea {color: #333;}
+
+a {
+  color: #1c206a;
+  -webkit-transition: all 0.1s ease-in;
+  -moz-transition:  all 0.1s ease-in;
+  -o-transition:    all 0.1s ease-in;
+  -ms-transition:   all 0.1s ease-in;
+  transition:     all 0.1s ease-in;
+}
+
+a:hover {
+  color: #3138bb;
+  text-decoration: none;
+}
+
+/* Custom text-selection colors (remove any text shadows: twitter.com/miketaylr/status/12228805301) */
+::-moz-selection{background: #4e4ea3; color: #fff; text-shadow: none;}
+::selection {background: #4e4ea3; color: #fff; text-shadow: none;} 
+
+/*  j.mp/webkit-tap-highlight-color */
+a:link {-webkit-tap-highlight-color: #4e4ea3;} 
+
+ins {background-color: #4e4ea3; color: #000; text-decoration: none;}
+mark {background-color: #4e4ea3; color: #000; font-style: italic; font-weight: bold;}
+
+/* social media icon spriting thanks to komodomedia.com */
+.social-icon, #podcast-icon {
+  display: inline-block;
+  background: transparent url('img/icons/social-icons.png') 0 0 no-repeat;/* apple default */
+  height: 16px;
+  width: 16px;
+  border: none;
+  outline: none;
+  text-indent: -9999px;
+  padding: 0;
+  margin: 8px 4px;
+}
+  #podcast-icon  { background-image: url('img/icons/podcast.png'); }
+  .email    { background-position: -16px 0; }
+  .forrst   { background-position: -32px 0; }
+  .linkedin { background-position: -48px 0; }
+  .rss    { background-position: -64px 0; }
+  .skype    { background-position: -80px 0; }
+  .tumblr   { background-position: -96px 0; }
+  .twitter  { background-position: -112px 0; }
+
+/* lion-esque buttons */
+.btn {
+    color: #484848;
+    text-decoration: none;
+    text-shadow: 0 1px 0 #fff;
+    font: bold 12px Helvetica, Arial, sans-serif;
+    line-height: 2em;
+    height: 2em;
+    display: inline-block;
+    margin: 5px 0 0;
+    padding: 0 0.625em;
+    background: #f0f0f0;
+    background: -webkit-linear-gradient(top, #f7f7f7, #d1d1d1);
+    background: -moz-linear-gradient(top, #f7f7f7, #d1d1d1);
+    background: -ms-linear-gradient(top, #f7f7f7, #d1d1d1);
+    background: -o-linear-gradient(top, #f7f7f7, #d1d1d1);
+    border: none;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  }
+  
+  .btn:hover {
+      color: #282828;
+      background: -webkit-linear-gradient(top, #ffffff, #dfdfdf);
+      background: -moz-linear-gradient(top, #ffffff, #dfdfdf);
+      background: -ms-linear-gradient(top, #ffffff, #dfdfdf);
+      background: -o-linear-gradient(top, #ffffff, #dfdfdf);
+  }
+  
+  .btn:active {
+      background: #d0d0d0;
+      background: -webkit-gradient(linear, left top, left bottom, from(#a8a8a8), color-stop(0.15, #c6c6c6), to(#d8d8d8));
+      background: -webkit-linear-gradient(top, #a8a8a8, #c6c6c6 15%, #d8d8d8);
+      background: -moz-linear-gradient(top, #a8a8a8, #c6c6c6 15%, #d8d8d8);
+      background: -ms-linear-gradient(top, #a8a8a8, #c6c6c6 15%, #d8d8d8);
+      background: -o-linear-gradient(top, #a8a8a8, #c6c6c6 15%, #d8d8d8);
+  }
+
+.page-wrap {width: 960px; margin: 0 auto; position: relative;}
+
+/************************************************************************/
+/* Header */
+/************************************************************************/
+header#top {
+  position: fixed;
+  top: 0; left: 0;
+  z-index: 100;
+  padding: 10px 0;
+  height: 30px;
+  width: 100%;
+  background: #1f1f1f url('img/black_denim.png') 0 0 repeat;/* credit http://subtlepatterns.com/ */
+  border-bottom: 1px solid #353536;
+  -moz-box-shadow:   4px 0 4px #353536;
+  -webkit-box-shadow:  4px 0 4px #353536;
+  box-shadow:      4px 0 4px #353536;
+  opacity: 0.9;
+} /* title */
+  #site-title { 
+    float: left;
+    width: 130px;
+    margin-left: 40px;
+margin-right: 400px;
+    font-weight: normal;
+  }
+  #site-title a {
+    font-family: "Gruppo", sans-serif;
+    font-size: 30px; 
+    line-height: 30px; 
+    text-decoration: none; 
+    color: #9595D1; 
+    opacity: 0.8;
+    letter-spacing: 0.2em;
+  }
+  /* main nav */
+  #top nav {
+    float: left;
+  }
+    #top nav ul li {
+      display: list-item;
+      float: left;
+      height: 30px;
+      padding-top: 2px;
+      margin-right: 15px;
+    }
+    #top nav ul li a,
+    #footer li a,
+    #mc_embed_signup p a {
+      color: #cececf;
+      text-decoration: none;
+      line-height: 30px;
+      opacity: 0.5;
+      text-shadow: 0 0 1px rgba(255, 255, 255, 0.1);
+    }
+    #top li.current_page_item > a,
+    #top li.current-menu-ancestor > a,
+    #top li.current-menu-item > a { 
+      opacity: 1; 
+      border-bottom: 1px dashed #bd1421; 
+      padding-bottom: 2px;
+    }
+    #top nav ul li a:hover,
+    #footer li a:hover,
+    #mc_embed_signup p a:hover {
+      opacity: 1;
+    }
+    #top nav ul ul {
+      display: none; /* fix in future for multi-level nav */
+    }
+  /* search form */
+  #searchform {
+    float: left;
+    width: 150px;
+    opacity: 0.6;
+    margin-right: 8px;
+  }
+    #searchform label { display: block; text-indent: -9999px; height: 0; }
+    #searchform input {
+      display: inline-block;
+      height: 30px;
+      outline: none;
+      border: none;
+      margin: 0; padding: 0;
+      float: left;
+    }
+    #searchform #s {
+      width: 101px;
+      background: transparent url('img/search-box.png') 0 0 no-repeat;/* http://365psd.com/day/123/ */
+      padding-left: 15px;
+      padding-top: 2px;
+      color: #fdfdff;
+      font-size: 16px;
+    }
+    #searchsubmit {
+      width: 34px;
+      background: transparent url('img/search-box.png') -165px 0 no-repeat;
+    }
+    
+/************************************************************************/
+/* Content */
+/************************************************************************/
+    
+#content {
+  padding: 80px 0 0;
+  background-color: #fdfdff;
+  border-left: 1px solid #e2e3f7;
+  border-right: 1px solid #e2e3f7;
+  -moz-box-shadow:  0 2px 4px #e2e3f7;
+  -webkit-box-shadow: 0 2px 4px #e2e3f7;
+  box-shadow:     0 2px 4px #e2e3f7;
+}
+  #content > h2 {
+    margin: 0 0 1em 30px;
+  }
+
+/************************************************************************/
+/* Sidebar */
+/************************************************************************/
+aside /* #sidebar */ {
+  float: right;
+  width: 250px;
+  border-left: 1px solid #eff0fb;
+  padding-left: 30px;
+  margin: 0 30px 30px;
+}
+
+  aside h2 {
+    border-bottom: 1px dotted #bd1421;
+    padding-bottom: 4px;
+    margin: 24px 0 8px;
+  }
+  
+  aside li {
+    font-size: 90%;
+    margin: 0 0 8px 16px;
+    list-style-type: none;
+    clear: left;
+  }
+  
+  aside a {
+    text-decoration: none;
+    display: block;
+    margin-top: 4px;
+  }
+  
+  aside a:hover { 
+    text-decoration: underline;
+  }
+
+  aside img {
+    float: left;
+    margin: 0 1em 1em 0;
+    border-radius: 50px
+  }
+
+/************************************************************************/
+/* Footer */
+/************************************************************************/
+
+footer#footer {
+  clear: right;
+  background: #1F1F1F url('img/black-Linen.png') 0 0 repeat-x;
+  margin-top: 2em;
+  padding: 1em 2em;
+  font-size: 90%;
+  border-left: 1px solid #1F1F1F;
+  border-right: 1px solid #1F1F1F;
+  -moz-box-shadow:  0 2px 8px #1F1F1F;
+  -webkit-box-shadow: 0 2px 8px #1F1F1F;
+  box-shadow:     0 2px 8px #1F1F1F;
+}
+
+  #footer section {
+    float: left;
+    width: 25%;
+    margin-right: 5%;
+  }
+  
+  #footer li a { 
+    line-height: 1.5em; 
+    font-size: 85%;
+  }
+  
+  #footer li ul {
+    margin-left: 10px;
+  }
+    
+  #footer > span {
+    clear: left;
+    text-align: center;
+    display: block;
+    font-size: 80%;
+  }
+
+aside.double {
+  width:145px;
+  margin: 0;
+}
+
+/* And here begins the Wordpress fun.
+-------------------------------------------------------------------------------*/
+.post, article.page, ol.commentlist {
+  padding-left: 60px;
+  margin-bottom: 1.75em;
+  margin-right: 340px;
+}
+
+.post {
+  margin-top: 2em;
+}
+
+.entry-title {
+  font-family: "Maven Pro",sans-serif;
+  font-weight: 500;
+  font-size: 2em;
+  margin-bottom: 0.25em;
+  padding-top: 2em; /* for anchor nav */
+}
+.entry-content {}
+  #meta, .meta {
+    font-size: 0.8em;
+    color: #898989;
+    margin-bottom: 1em;
+  }
+  .entry-content h1, .post h1, .page h1,
+  .entry-content h2, .post h2,
+  .entry-content h3, .post h3,
+  .entry-content h4, .post h4,
+  .entry-content h5, .post h5,
+  .entry-content h6, .post h6 { margin-bottom: 0.5em; font-weight: bold;}
+  .entry-content h1 { font-size: 1.75em;}
+  .entry-content h2, article h2, .post h2 {
+    font-family: "Maven Pro", sans-serif;
+    font-weight: 400;
+    font-size: 1.5em;
+    clear: left;
+  }
+  .entry-content h3, .post h3 { font-size: 1.1em;}
+  .entry-content h4, .post h4 { font-size: 1.0em;}
+  .entry-content h5, .post h5 { font-size: 0.8em;}
+  .entry-content h6, .post h6 { font-size: 0.7em;}
+  .entry-content p, .post p, ol.commentlist li.comment p {
+    font-weight: normal;
+    font-size: 0.95em;
+    line-height: 1.5em;
+    margin-bottom: 0.75em;
+  }
+  .entry-content ul,
+  .entry ul {
+    list-style-type: disc;
+    list-style-position: inside;
+    margin: 1em;
+  }
+
+  .entry-content li, 
+  .entry li {
+    line-height: 1.25em;
+    padding-bottom: 0.5em;
+  }
+  
+  blockquote {
+    background: #eff0fb url('img/quote.png') 5px 2px no-repeat;
+    padding: 1em 1.5em 0.1em;
+    margin-bottom: 0.75em;
+    font-size: 1em;
+    font-style: italic;
+  }
+.entry-content a {}
+.entry-content a:hover {}
+
+
+.postmetadata {}
+
+.navigation { margin: 0 1em;}
+.next-posts {}
+.prev-posts {}
+/* COMMENTS */
+h2#comments, #content > #respond { margin-left: 60px; padding-left: 0; }
+ol.commentlist {
+    list-style: none;
+}
+ol.commentlist li {}
+ol.commentlist li.alt {}
+ol.commentlist li.bypostauthor {background-color: #eaefff !important}
+ol.commentlist li.byuser {}
+ol.commentlist li.comment-author-admin {}
+ol.commentlist li.comment {
+    border-bottom: 1px dotted #666; 
+    padding: 10px 10px 10px 0;
+}
+ol.commentlist li.comment div.comment-body { position: relative; }
+ol.commentlist li.comment div.comment-author {}
+ol.commentlist li.comment div.vcard {}
+ol.commentlist li.comment div.vcard cite.fn {font-style: normal;}
+ol.commentlist li.comment div.vcard cite.fn a.url {}
+ol.commentlist li.comment div.vcard img.avatar {
+    float:left; 
+    margin: 0 10px 10px;
+    padding: 2px;
+    background-color: #1C206A;
+}
+ol.commentlist li.comment div.vcard img.avatar-32 {}
+ol.commentlist li.comment div.vcard img.photo {}
+ol.commentlist li.comment div.vcard span.says { display: none; }
+ol.commentlist li.comment div.commentmetadata {position: absolute; right: 0; bottom: 0;}
+ol.commentlist li.comment div.comment-meta {font-size: 10px;}
+ol.commentlist li.comment div.comment-meta a {color: #ccc; text-decoration: none;}
+ol.commentlist li.comment div.comment-meta a:hover { color: #aaa; text-decoration: underline;}
+ol.commentlist li.comment p { clear: left; margin: 10px 0; padding-left: 10px;}
+ol.commentlist li.comment ul {}
+ol.commentlist li.comment div.reply {font-size: 13px; margin-left: 1em;}
+ol.commentlist li.comment div.reply a {font-weight: bold;}
+/* comment threads */
+ol.commentlist li.comment ul.children { margin: 20px 0 0;}
+ol.commentlist li.comment ul.children li {}
+ol.commentlist li.comment ul.children li.alt {}
+ol.commentlist li.comment ul.children li.bypostauthor {}
+ol.commentlist li.comment ul.children li.byuser {}
+ol.commentlist li.comment ul.children li.comment {}
+ol.commentlist li.comment ul.children li.comment-author-admin {}
+ol.commentlist li.comment ul.children li.depth-2,
+ol.commentlist li.comment ul.children li.depth-3,
+ol.commentlist li.comment ul.children li.depth-4,
+ol.commentlist li.comment ul.children li.depth-5 { 
+    margin: 0 0 10px 20px;
+    border-bottom: none;
+    border-left: 1px dotted #666;
+}
+ol.commentlist li.comment ul.children li.odd {}
+ol.commentlist li.even {background: #fdfdff;}
+ol.commentlist li.odd {background: #f6f6f6;}
+ol.commentlist li.parent {}
+ol.commentlist li.thread-alt {}
+ol.commentlist li.thread-even {}
+ol.commentlist li.thread-odd {}
+ol.commentlist li.comment em.comment-awaiting-moderation { font-size: 0.9em; font-style: italic; }
+
+/* respond form */
+div#respond {
+    padding: 10px;
+    background-color: #fdfdff;
+}
+
+#respond h2 { margin-bottom: 0.83em;}
+.cancel-comment-reply { font-size: 0.8em; }
+#respond div { margin-bottom: 0.38em;}
+#respond form { font-size: 0.9em; }
+#respond form input {
+    height: 16px;
+}
+#respond form label { line-height: 16px; }
+#respond button {
+    display: block;
+    margin: 0.38em 0;
+}
+
+/************************************************************************/
+/* Home Page */
+/************************************************************************/
+
+img#iphone {
+  display: block;
+  margin: 0 0 0 50px;
+  padding: 0 50px;
+  border-bottom: 1px solid #353536;
+}
+
+img#iphone + h2 {
+  font-weight: 100;
+  font-size: 1.5em;
+  padding: 1em 0;
+  line-height: 1.5em;
+  margin: 0 0 0 50px !important;
+  border-bottom: 1px solid #353536;
+  width: 512px;
+}
+
+/************************************************************************/
+/* Contact Page */
+/************************************************************************/
+.screenReader { display: none !important; }
+.inline { display: inline-block !important; padding: 8px 4px 4px 0; }
+.inline + input[type="checkbox"] { vertical-align: middle; }
+#contactForm label {
+  display: block;
+  margin: 8px 0 4px;
+}
+
+#contactForm input[type="text"],
+#contactForm textarea {
+  display: block;
+}
+
+.error, .success {
+  display: block;
+  padding: 0.5em 1em;
+  margin: 5px 0;
+}
+
+.error { background-color: #ff4554; }
+.success { background-color: #5fd64f; }
+
+audio { background-color: #333; }
+
+[alt="icon"] {
+  float: left;
+  margin: 0 1.2em 1.2em 0;
+}
+
+.post aside {
+  margin-right: -340px;
+}
+.gallery a {
+    text-decoration: none;
+    border: 0;
+}
