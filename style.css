@@ -604,3 +604,7 @@ audio { background-color: #333; }
 .avatars img {
   margin-top: -4px;
 }
+
+.post article + article {
+  margin-top: 3em;
+}
