@@ -311,6 +311,7 @@ aside /* #sidebar */ {
     border-bottom: 1px dotted #bd1421;
     padding-bottom: 4px;
     margin: 24px 0 8px;
+    font-size: 1em;
   }
   
   aside li {
@@ -386,10 +387,6 @@ aside.double {
   padding-left: 60px;
   margin-bottom: 1.75em;
   margin-right: 340px;
-}
-
-.post {
-  margin-top: 2em;
 }
 
 .entry-title {
@@ -591,9 +588,19 @@ audio { background-color: #333; }
 }
 
 .post aside {
-  margin-right: -340px;
+  margin-right: -310px;
 }
 .gallery a {
     text-decoration: none;
     border: 0;
+}
+
+.avatars li {
+  margin-left: 0;
+  margin-top: 24px;
+  line-height: 18px;
+}
+
+.avatars img {
+  margin-top: -4px;
 }
