@@ -166,10 +166,11 @@ footer p {
 }
 
 
-/* Provide higher res assets for iPhone 4 */
+/* Provide higher res assets for retina */
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2) {
 	#appstore {
 		background: url("../img/app_store@2x.png");
+		background-size: 252px 87px;
 		}
 }
