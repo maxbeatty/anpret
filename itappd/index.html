@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<title>iTappd &middot; The First Native iPhone App for Untappd</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+	<!-- The 1140px Grid -->
+	<link rel="stylesheet" href="css/1140.css" type="text/css" media="screen" />
+	
+	<!--[if lte IE 9]>
+	<link rel="stylesheet" href="css/ie.css" type="text/css" media="screen" />
+	<![endif]-->
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	
+	<!-- Type and image presets - NOT ESSENTIAL -->
+	<link rel="stylesheet" href="css/typeimg.css" type="text/css" media="screen" />
+	<!-- Make minor type adjustments for 1024 monitors -->
+	<link rel="stylesheet" href="css/smallerscreen.css" media="only screen and (max-width: 1023px)" />
+	<!-- Resets grid for mobile -->
+	<link rel="stylesheet" href="css/mobile.css" media="handheld, only screen and (max-width: 767px)" />
+	<!-- Put your layout here -->
+	<link rel="stylesheet" href="css/layout.css" type="text/css" media="screen" />
+	
+	<!-- Asynchronous Google Analytics: mathiasbynens.be/notes/async-analytics-snippet -->
+	<script>
+		var _gaq = [['_setAccount', 'UA-5394278-7'], ['_trackPageview']];
+		(function(d, t) {
+			var g = d.createElement(t),
+					s = d.getElementsByTagName(t)[0];
+			g.async = true;
+			g.src = ('https:' == location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			s.parentNode.insertBefore(g, s);
+		})(document, 'script');
+	</script>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js" type="text/javascript"></script>
+	<script src="js/screenshots.js" type="text/javascript"></script>
+	<script src="js/widget.js" type="text/javascript"></script>
+</head>
+
+
+<body class="container">
+	<header class="row">
+		<div class="fivecol">
+			<hgroup>
+				<h1>iTappd</h1>
+				<h2>The First Native iPhone App for <a href="http://untappd.com" target="_blank">Untappd</a></h2>
+			</hgroup>
+		</div>
+		<div class="sixcol last" id="appstore_upper">
+			<!-- appstore button moves here when scrolling down -->
+		</div>
+	</header>
+
+	<article id="features" class="row">
+	
+		<section id="iphone" class="sixcol">
+			<img id="loading" src="img/ajax-loader.gif" alt="Loading..." />
+			<img id="screenshot" src="img/screenshots/splash.jpg" alt="screenshot" />
+		</section>
+		
+		<section class="sixcol last">
+		
+			<h1 id="appstore_lower"><a href="http://bit.ly/itappd" target="_blank" id="appstore" title="Available in the App Store">Available in the App Store</a></h1>
+			
+			<ul id="feature_desc">
+				<li id="1">
+					<strong><span>Feed</span></strong>
+					<small>See your friends', neighbors', and the world's latest brews along with their thoughts and location.</small>
+				</li>
+				<li id="2">
+					<strong><span>Drink Up</span></strong>
+					<small>Use the quick search to find the brew you are enjoying.</small>
+				</li>
+				<li id="3">
+					<strong><span>Check In</span></strong>
+					<small>Then,check in your beer and tasting notes, snap a picture of your beer with <a href="http://www.flickr.com/" title="flickr">Flickr</a>, add your location on <a href="https://foursquare.com/" title="4sq">foursquare</a>, and share it all on <a href="https://www.facebook.com/">Facebook</a> and <a href="https://twitter.com/">Twitter</a>!</small>
+				</li>
+				<li id="4">
+					<strong><span>More Info</span></strong>
+					<small>Get the 411 of every check-in like comments, venues, maps, and now more detailed beer info.</small>
+				</li>
+				<li id="5">
+					<strong><span>Beer Details</span></strong>
+					<small>Learn more about the beer you or anyone else is enjoying.</small>
+				</li>
+			</ul>
+			
+			<h3>A native iPhone App means <em>FASTER</em> loading, a smoother interface, and multitasking which results in less time trying to check-in and more time enjoying quality brew.</h3>
+			
+		</section>
+	</article>
+<!--	
+	<article id="widget" class="row">
+		<section class="threecol">
+			<h2>Widget</h2>
+			<p>Customize your own Untappd widget to place on your site.</p>
+			<p>
+				<label for="username">Username</label><br/>
+				<input type="text" name="username" id="username" value="maxbeatty" />
+			</p>
+			<ul id="checkboxes">
+				<li>
+					<label for="first_name">First Name</label>
+					<input type="checkbox" name="first_name" id="first_name" value="checked">
+				</li>
+				<li>
+					<label for="last_name">Last Name</label>
+					<input type="checkbox" name="last_name" id="last_name" value="checked">
+				</li>
+				<li>
+					<label for="user_name">Username</label>
+					<input type="checkbox" name="user_name" id="user_name" value="checked">
+				</li>
+				<li>
+					<label for="avatar">Avatar</label>
+					<input type="checkbox" name="avatar" id="avatar" value="checked">
+				</li>
+				<li>
+					<label for="date_joined">Date Joined</label>
+					<input type="checkbox" name="date_joined" id="date_joined" value="checked">
+				</li>
+				<li>
+					<label for="badges">Badges</label>
+					<input type="checkbox" name="badges" id="badges" value="checked">
+				</li>
+				<li>
+					<label for="checkins">Checkins</label>
+					<input type="checkbox" name="checkins" id="checkins" value="checked">
+				</li>
+				<li>
+					<label for="friends">Friends</label>
+					<input type="checkbox" name="friends" id="friends" value="checked">
+				</li>
+				<li>
+					<label for="beers">Beers</label>
+					<input type="checkbox" name="beers" id="beers" value="checked">
+				</li>
+				<li>
+					<label for="created_beers">Created Beers</label>
+					<input type="checkbox" name="created_beers" id="created_beers" value="checked">
+				</li>
+			</ul>
+
+				// first_name
+				// last_name
+				// user_name
+				// user_avatar
+				// date_joined
+				// total_badges
+				// total_friends
+				// total_checkins
+				// total_beers
+				// total_created_beers
+<p>
+				<label for="radio">Radio: </label>
+				<input type="radio" name="radio" id="radio_one" value="one">One&nbsp;&nbsp;<input type="radio" name="radio" id="radio_two" value="two">Two
+			</p>
+			<p>
+				<label for="checkbox">Checkbox: </label>
+				<input type="checkbox" name="checkbox" id="checkbox" value="checked">Check
+			</p>
+			<p>
+				<label for="select">Select: </label>
+				<select name="select" id="select">
+					<option value="alpha">Alpha</option>
+					<option value="beta" selected>Beta</option>
+				</select>
+			</p>
+			<p>
+				<label for="multiselect">MultiSelect: </label>
+				<select name="multiselect" id="multiselect" multiple="multiple" size="2">
+					<option value="gamma">Gamma</option>
+					<option value="delta">Delta</option>
+					<option value="epsilon">Epsilon</option>
+					<option value="zeta">Zeta</option>
+				</select>
+			</p>
+			<p>
+				<label for="textarea">Textarea: </label>
+				<textarea name="textarea" id="textarea" rows="5" cols="30">Text</textarea>
+			</p>
+
+			<p>
+				<button type="button" id="genWid">Generate Widget</button>
+			</p>
+		</section>
+		
+		<section class="ninecol last">
+			<div id="userResult">
+			
+			</div>
+		</section>
+	</article>
+
+	<article id="usa_beers" class="row">
+		<table>
+			<thead>
+				<tr>
+					<th>Rank</th>
+					<th>Name</th>
+					<th>Brewer</th>
+					<th>Award</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td><a href="http://www.ratebeer.com/beer/russian-river-pliny-the-younger/43181/">Russian River Pliny the Younger</a></td>
+					<td>Russian River Brewing</td>
+					<td>Gold</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td><a href="http://www.ratebeer.com/beer/cigar-city-zhukovs-final-push/119353/">Cigar City Zhukov’s Final Push</a></td>
+					<td>Cigar City Brewing</td>
+					<td>Gold</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td><a href="http://www.ratebeer.com/beer/goose-island-rare-bourbon-county-stout/116684/">Goose Island Rare Bourbon County Stout</a></td>
+					<td>Goose Island Beer Company</td>
+					<td>Gold</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td><a href="http://www.ratebeer.com/beer/alesmith-speedway-stout/14232/">AleSmith Speedway Stout</a></td>
+					<td>AleSmith Brewing Company</td>
+					<td>Gold</td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td><a href="http://www.ratebeer.com/beer/three-floyds-dark-lord-russian-imperial-stout/15917/">Three Floyds Dark Lord Russian Imperial Stout</a></td>
+					<td>Three Floyds Brewing Company</td>
+					<td>Gold</td>
+				</tr>
+				<tr>
+					<td>6</td>
+					<td><a href="http://www.ratebeer.com/beer/russian-river-pliny-the-elder/8936/">Russian River Pliny the Elder</a></td>
+					<td>Russian River Brewing</td><td><a name="certificate_2011.asp?title=Best Beers of the United States 2011&beer=Russian+River+Pliny+the+Elder&brewer=Russian+River+Brewing">Gold</a></td></tr>
+				
+				<tr>
+				<td>7. <a href="http://www.ratebeer.com/beer/founders-kentucky-breakfast-stout-kbs/
+				40544/">Founders Kentucky Breakfast Stout &#40;KBS&#41;</a></td><td>Founders Brewing Company</td><td><a name="certificate_2011.asp?title=Best Beers of the United States 2011&beer=Founders+Kentucky+Breakfast+Stout+%26%2340%3BKBS%26%2341%3B&brewer=Founders+Brewing+Company">Gold</a></td></tr>
+				
+				<tr>
+				<td>8. <a href="http://www.ratebeer.com/beer/alesmith-barrel-aged-speedway-stout/
+				28173/">AleSmith Barrel Aged Speedway Stout</a></td><td>AleSmith Brewing Company</td><td><a name="certificate_2011.asp?title=Best Beers of the United States 2011&beer=AleSmith+Barrel+Aged+Speedway+Stout&brewer=AleSmith+Brewing+Company">Gold</a></td></tr>
+				
+				<tr>
+				<td>9. <a href="http://www.ratebeer.com/beer/bells-hopslam/
+				35488/">Bells Hopslam</a></td><td>Bells Brewery</td><td><a name="certificate_2011.asp?title=Best Beers of the United States 2011&beer=Bells+Hopslam&brewer=Bells+Brewery">Gold</a></td></tr>
+				
+				<tr>
+				<td>10. <a href="http://www.ratebeer.com/beer/cigar-city-brandy-barrel-aged-hunahpus-imperial-stout/
+				119354/">Cigar City Brandy Barrel Aged Hunahpu’s Imperial Stout </a></td><td>Cigar City Brewing</td><td><a name="certificate_2011.asp?title=Best Beers of the United States 2011&beer=Cigar+City+Brandy+Barrel+Aged+Hunahpu%92s+Imperial+Stout+&brewer=Cigar+City+Brewing">Gold</a></td></tr>
+				
+				<tr>
+				<td>11. <a href="http://www.ratebeer.com/beer/founders-canadian-breakfast-stout/
+				98973/">Founders Canadian Breakfast Stout</a></td><td>Founders Brewing Company</td><td><a name="certificate_2011.asp?title=Best Beers of the United States 2011&beer=Founders+Canadian+Breakfast+Stout&brewer=Founders+Brewing+Company">Gold</a></td></tr>
+				
+				<tr>
+				<td>12. <a href="http://www.ratebeer.com/beer/cigar-city-hunahpus-imperial-stout/
+				97078/">Cigar City Hunahpu’s Imperial Stout</a></td><td>Cigar City Brewing</td><td><a name="certificate_2011.asp?title=Best Beers of the United States 2011&beer=Cigar+City+Hunahpu%92s+Imperial+Stout&brewer=Cigar+City+Brewing">Gold</a></td></tr>
+				
+				<tr>
+				<td>13. <a href="http://www.ratebeer.com/beer/deschutes-the-abyss/
+				65832/">Deschutes The Abyss</a></td><td>Deschutes Brewery</td><td><a name="certificate_2011.asp?title=Best Beers of the United States 2011&beer=Deschutes+The+Abyss&brewer=Deschutes+Brewery">Gold</a></td></tr>
+				
+				<tr>
+				<td>14. <a href="http://www.ratebeer.com/beer/goose-island-bourbon-county-stout/
+				8909/">Goose Island Bourbon County Stout</a></td><td>Goose Island Beer Company</td><td><a name="certificate_2011.asp?title=Best Beers of the United States 2011&beer=Goose+Island+Bourbon+County+Stout&brewer=Goose+Island+Beer+Company">Gold</a></td></tr>
+				
+				<tr>
+				<td>15. <a href="http://www.ratebeer.com/beer/russian-river-supplication/
+				43947/">Russian River Supplication</a></td><td>Russian River Brewing</td><td><a name="certificate_2011.asp?title=Best Beers of the United States 2011&beer=Russian+River+Supplication&brewer=Russian+River+Brewing">Gold</a></td></tr>
+				
+				<tr>
+				<td>16. <a href="http://www.ratebeer.com/beer/bells-expedition-stout/
+				3214/">Bells Expedition Stout</a></td><td>Bells Brewery</td><td><a name="certificate_2011.asp?title=Best Beers of the United States 2011&beer=Bells+Expedition+Stout&brewer=Bells+Brewery">Gold</a></td></tr>
+				
+				<tr>
+				<td>17. <a href="http://www.ratebeer.com/beer/three-floyds-dreadnaught-imperial-ipa/
+				8933/">Three Floyds Dreadnaught Imperial IPA</a></td><td>Three Floyds Brewing Company</td><td><a name="certificate_2011.asp?title=Best Beers of the United States 2011&beer=Three+Floyds+Dreadnaught+Imperial+IPA&brewer=Three+Floyds+Brewing+Company">Gold</a></td></tr>
+				
+				<tr>
+				<td>18. <a href="http://www.ratebeer.com/beer/goose-island-bourbon-county-coffee-stout/
+				66358/">Goose Island Bourbon County Coffee Stout</a></td><td>Goose Island Beer Company</td><td><a name="certificate_2011.asp?title=Best Beers of the United States 2011&beer=Goose+Island+Bourbon+County+Coffee+Stout&brewer=Goose+Island+Beer+Company">Gold</a></td></tr>
+				
+				<tr>
+				<td>19. <a href="http://www.ratebeer.com/beer/stone-imperial-russian-stout/
+				4315/">Stone Imperial Russian Stout</a></td><td>Stone Brewing Co.</td><td><a name="certificate_2011.asp?title=Best Beers of the United States 2011&beer=Stone+Imperial+Russian+Stout&brewer=Stone+Brewing+Co%2E">Gold</a></td></tr>
+				
+				<tr>
+				<td>20. <a href="http://www.ratebeer.com/beer/three-floyds-oak-aged-dark-lord-russian-imperial-stout/
+				58590/">Three Floyds Oak Aged Dark Lord Russian Imperial Stout</a></td><td>Three Floyds Brewing Company</td><td><a name="certificate_2011.asp?title=Best Beers of the United States 2011&beer=Three+Floyds+Oak+Aged+Dark+Lord+Russian+Imperial+Stout&brewer=Three+Floyds+Brewing+Company">Gold</a></td></tr>
+				
+				<tr>
+				<td>21. <a href="http://www.ratebeer.com/beer/lost-abbey-cable-car/
+				76897/">Lost Abbey Cable Car</a></td><td>Port Brewing/Lost Abbey</td><td><a name="certificate_2011.asp?title=Best Beers of the United States 2011&beer=Lost+Abbey+Cable+Car&brewer=Port+Brewing%2FLost+Abbey">Gold</a></td></tr>
+				
+				<tr>
+				<td>22. <a href="http://www.ratebeer.com/beer/great-divide-espresso-oak-aged-yeti-imperial-stout/
+				85174/">Great Divide Espresso Oak Aged Yeti Imperial Stout</a></td><td>Great Divide Brewing Company</td><td><a name="certificate_2011.asp?title=Best Beers of the United States 2011&beer=Great+Divide+Espresso+Oak+Aged+Yeti+Imperial+Stout&brewer=Great+Divide+Brewing+Company">Gold</a></td></tr>
+				
+				<tr>
+				<td>23. <a href="http://www.ratebeer.com/beer/russian-river-consecration/
+				94349/">Russian River Consecration</a></td><td>Russian River Brewing</td><td><a name="certificate_2011.asp?title=Best Beers of the United States 2011&beer=Russian+River+Consecration&brewer=Russian+River+Brewing">Gold</a></td></tr>
+				
+				<tr>
+				<td>24. <a href="http://www.ratebeer.com/beer/lost-abbey-the-angels-share-grand-cru/
+				118152/">Lost Abbey The Angel’s Share Grand Cru</a></td><td>Port Brewing/Lost Abbey</td><td><a name="certificate_2011.asp?title=Best Beers of the United States 2011&beer=Lost+Abbey+The+Angel%92s+Share+Grand+Cru&brewer=Port+Brewing%2FLost+Abbey">Gold</a></td></tr>
+				
+				<tr>
+				<td>25. <a href="http://www.ratebeer.com/beer/firestone-walker-parabola/
+				60246/">Firestone Walker Parabola</a></td><td>Firestone Walker Brewing Co.</td><td><a name="certificate_2011.asp?title=Best Beers of the United States 2011&beer=Firestone+Walker+Parabola&brewer=Firestone+Walker+Brewing+Co%2E">Gold</a></td></tr>
+				
+				<tr>
+				<td>26. <a href="http://www.ratebeer.com/beer/three-floyds-vanilla-bean-barrel-aged-dark-lord-russian-imperial-stout/
+				86808/">Three Floyds Vanilla Bean Barrel Aged Dark Lord Russian Imperial Stout </a></td><td>Three Floyds Brewing Company</td><td><a name="certificate_2011.asp?title=Best Beers of the United States 2011&beer=Three+Floyds+Vanilla+Bean+Barrel+Aged+Dark+Lord+Russian+Imperial+Stout+&brewer=Three+Floyds+Brewing+Company">Gold</a></td></tr>
+				
+				<tr>
+				<td>27. <a href="http://www.ratebeer.com/beer/oskar-blues-ten-fidy/
+				68107/">Oskar Blues Ten FIDY</a></td><td>Oskar Blues Grill & Brew</td><td><a name="certificate_2011.asp?title=Best Beers of the United States 2011&beer=Oskar+Blues+Ten+FIDY&brewer=Oskar+Blues+Grill+%26+Brew">Gold</a></td></tr>
+				
+				<tr>
+				<td>28. <a href="http://www.ratebeer.com/beer/goose-island-bourbon-county-vanilla-stout/
+				113113/">Goose Island Bourbon County Vanilla Stout</a></td><td>Goose Island Beer Company</td><td><a name="certificate_2011.asp?title=Best Beers of the United States 2011&beer=Goose+Island+Bourbon+County+Vanilla+Stout&brewer=Goose+Island+Beer+Company">Gold</a></td></tr>
+				
+				<tr>
+				<td>29. <a href="http://www.ratebeer.com/beer/north-coast-old-rasputin-russian-imperial-stout/
+				680/">North Coast Old Rasputin Russian Imperial Stout</a></td><td>North Coast Brewing Company</td><td><a name="certificate_2011.asp?title=Best Beers of the United States 2011&beer=North+Coast+Old+Rasputin+Russian+Imperial+Stout&brewer=North+Coast+Brewing+Company">Gold</a></td></tr>
+				
+				<tr>
+				<td>30. <a href="http://www.ratebeer.com/beer/great-divide-yeti-imperial-stout/
+				25082/">Great Divide Yeti Imperial Stout</a></td><td>Great Divide Brewing Company</td><td><a name="certificate_2011.asp?title=Best Beers of the United States 2011&beer=Great+Divide+Yeti+Imperial+Stout&brewer=Great+Divide+Brewing+Company">Gold</a></td></tr>
+				
+				<tr>
+				<td>31. <a href="http://www.ratebeer.com/beer/north-coast-old-rasputin-anniversary-bourbon-barrel-aged-stout/
+				71101/">North Coast Old Rasputin Anniversary Bourbon Barrel Aged Stout  </a></td><td>North Coast Brewing Company</td><td><a name="certificate_2011.asp?title=Best Beers of the United States 2011&beer=North+Coast+Old+Rasputin+Anniversary+Bourbon+Barrel+Aged+Stout++&brewer=North+Coast+Brewing+Company">Gold</a></td></tr>
+				
+				<tr>
+				<td>32. <a href="http://www.ratebeer.com/beer/great-divide-oak-aged-yeti-imperial-stout/
+				37652/">Great Divide Oak Aged Yeti Imperial Stout   </a></td><td>Great Divide Brewing Company</td><td><a name="certificate_2011.asp?title=Best Beers of the United States 2011&beer=Great+Divide+Oak+Aged+Yeti+Imperial+Stout+++&brewer=Great+Divide+Brewing+Company">Gold</a></td></tr>
+				
+				<tr>
+				<td>33. <a href="http://www.ratebeer.com/beer/stone-bourbon-barrel-russian-imperial-stout/
+				57739/">Stone Bourbon Barrel Russian Imperial Stout</a></td><td>Stone Brewing Co.</td><td><a name="certificate_2011.asp?title=Best Beers of the United States 2011&beer=Stone+Bourbon+Barrel+Russian+Imperial+Stout&brewer=Stone+Brewing+Co%2E">Gold</a></td></tr>
+				
+				<tr>
+				<td>34. <a href="http://www.ratebeer.com/beer/cigar-city-bourbon-barrel-aged-hunahpus-imperial-stout/
+				114747/">Cigar City Bourbon Barrel Aged Hunahpu’s Imperial Stout</a></td><td>Cigar City Brewing</td><td><a name="certificate_2011.asp?title=Best Beers of the United States 2011&beer=Cigar+City+Bourbon+Barrel+Aged+Hunahpu%92s+Imperial+Stout&brewer=Cigar+City+Brewing">Gold</a></td></tr>
+				
+				<tr>
+				<td>35. <a href="http://www.ratebeer.com/beer/founders-breakfast-stout/
+				14956/">Founders Breakfast Stout</a></td><td>Founders Brewing Company</td><td><a name="certificate_2011.asp?title=Best Beers of the United States 2011&beer=Founders+Breakfast+Stout&brewer=Founders+Brewing+Company">Gold</a></td></tr>
+				
+				<tr>
+				<td>36. <a href="http://www.ratebeer.com/beer/lost-abbey-framboise-de-amorosa/
+				118146/">Lost Abbey Framboise de Amorosa</a></td><td>Port Brewing/Lost Abbey</td><td><a name="certificate_2011.asp?title=Best Beers of the United States 2011&beer=Lost+Abbey+Framboise+de+Amorosa&brewer=Port+Brewing%2FLost+Abbey">Gold</a></td></tr>
+				
+				<tr>
+				<td>37. <a href="http://www.ratebeer.com/beer/alesmith-kopi-luwak-speedway-stout/
+				113283/">AleSmith Kopi Luwak Speedway Stout</a></td><td>AleSmith Brewing Company</td><td><a name="certificate_2011.asp?title=Best Beers of the United States 2011&beer=AleSmith+Kopi+Luwak+Speedway+Stout&brewer=AleSmith+Brewing+Company">Gold</a></td></tr>
+				
+				<tr>
+				<td>38. <a href="http://www.ratebeer.com/beer/lost-abbey-veritas-006/
+				113129/">Lost Abbey Veritas 006</a></td><td>Port Brewing/Lost Abbey</td><td><a name="certificate_2011.asp?title=Best Beers of the United States 2011&beer=Lost+Abbey+Veritas+006&brewer=Port+Brewing%2FLost+Abbey">Gold</a></td></tr>
+				
+				<tr>
+				<td>39. <a href="http://www.ratebeer.com/beer/surly-darkness/
+				65289/">Surly Darkness</a></td><td>Surly Brewing Company</td><td><a name="certificate_2011.asp?title=Best Beers of the United States 2011&beer=Surly+Darkness&brewer=Surly+Brewing+Company">Gold</a></td></tr>
+				
+				<tr>
+				<td>40. <a href="http://www.ratebeer.com/beer/lost-abbey-the-angels-share-bourbon-barrel/
+				72798/">Lost Abbey The Angels Share &#40;Bourbon Barrel&#41;</a></td><td>Port Brewing/Lost Abbey</td><td><a name="certificate_2011.asp?title=Best Beers of the United States 2011&beer=Lost+Abbey+The+Angels+Share+%26%2340%3BBourbon+Barrel%26%2341%3B&brewer=Port+Brewing%2FLost+Abbey">Gold</a></td></tr>
+				
+				<tr>
+				<td>41. <a href="http://www.ratebeer.com/beer/hoppin-frog-barrel-aged-boris-the-crusher/
+				99410/">Hoppin Frog Barrel Aged BORIS The Crusher </a></td><td>Hoppin Frog Brewery</td><td><a name="certificate_2011.asp?title=Best Beers of the United States 2011&beer=Hoppin+Frog+Barrel+Aged+BORIS+The+Crusher+&brewer=Hoppin+Frog+Brewery">Gold</a></td></tr>
+				
+				<tr>
+				<td>42. <a href="http://www.ratebeer.com/beer/cigar-city-brandy-barrel-aged-marshal-zhukovs-imperial-stout/
+				116553/">Cigar City Brandy Barrel Aged Marshal Zhukov’s Imperial Stout </a></td><td>Cigar City Brewing</td><td><a name="certificate_2011.asp?title=Best Beers of the United States 2011&beer=Cigar+City+Brandy+Barrel+Aged+Marshal+Zhukov%92s+Imperial+Stout+&brewer=Cigar+City+Brewing">Gold</a></td></tr>
+				
+				<tr>
+				<td>43. <a href="http://www.ratebeer.com/beer/hair-of-the-dog-adam/
+				568/">Hair of the Dog Adam</a></td><td>Hair of the Dog Brewing Company</td><td><a name="certificate_2011.asp?title=Best Beers of the United States 2011&beer=Hair+of+the+Dog+Adam&brewer=Hair+of+the+Dog+Brewing+Company">Gold</a></td></tr>
+				
+				<tr>
+				<td>44. <a href="http://www.ratebeer.com/beer/great-divide-barrel-aged-yeti/
+				93977/">Great Divide Barrel Aged Yeti</a></td><td>Great Divide Brewing Company</td><td><a name="certificate_2011.asp?title=Best Beers of the United States 2011&beer=Great+Divide+Barrel+Aged+Yeti&brewer=Great+Divide+Brewing+Company">Gold</a></td></tr>
+				
+				<tr>
+				<td>45. <a href="http://www.ratebeer.com/beer/lost-abbey-veritas-007/
+				117867/">Lost Abbey Veritas 007</a></td><td>Port Brewing/Lost Abbey</td><td><a name="certificate_2011.asp?title=Best Beers of the United States 2011&beer=Lost+Abbey+Veritas+007&brewer=Port+Brewing%2FLost+Abbey">Gold</a></td></tr>
+				
+				<tr>
+				<td>46. <a href="http://www.ratebeer.com/beer/dogfish-head-90-minute-imperial-ipa/
+				10569/">Dogfish Head 90 Minute Imperial IPA</a></td><td>Dogfish Head Brewery</td><td><a name="certificate_2011.asp?title=Best Beers of the United States 2011&beer=Dogfish+Head+90+Minute+Imperial+IPA&brewer=Dogfish+Head+Brewery">Gold</a></td></tr>
+				
+				<tr>
+				<td>47. <a href="http://www.ratebeer.com/beer/cigar-city-marshal-zhukovs-double-barrel-aged-imperial-stout--2010/
+				126973/">Cigar City Marshal Zhukov’s Double Barrel Aged Imperial Stout - 2010</a></td><td>Cigar City Brewing</td><td><a name="certificate_2011.asp?title=Best Beers of the United States 2011&beer=Cigar+City+Marshal+Zhukov%92s+Double+Barrel+Aged+Imperial+Stout+%2D+2010&brewer=Cigar+City+Brewing">Gold</a></td></tr>
+				
+				<tr>
+				<td>48. <a href="http://www.ratebeer.com/beer/alesmith-ipa/
+				14396/">AleSmith IPA</a></td><td>AleSmith Brewing Company</td><td><a name="certificate_2011.asp?title=Best Beers of the United States 2011&beer=AleSmith+IPA&brewer=AleSmith+Brewing+Company">Gold</a></td></tr>
+				
+				<tr>
+				<td>49. <a href="http://www.ratebeer.com/beer/bells-bourbon-barrel-double-cream-expedition-stout/
+				71826/">Bells Bourbon Barrel Double Cream/Expedition Stout</a></td><td>Bells Brewery</td><td><a name="certificate_2011.asp?title=Best Beers of the United States 2011&beer=Bells+Bourbon+Barrel+Double+Cream%2FExpedition+Stout&brewer=Bells+Brewery">Gold</a></td></tr>
+				
+				<tr>
+				<td>50. <a href="http://www.ratebeer.com/beer/new-glarus-wisconsin-belgian-red/
+				7688/">New Glarus Wisconsin Belgian Red</a></td><td>New Glarus Brewing Company</td><td><a name="certificate_2011.asp?title=Best Beers of the United States 2011&beer=New+Glarus+Wisconsin+Belgian+Red&brewer=New+Glarus+Brewing+Company">Gold</a></td></tr>
+			</tbody>
+		</table>
+	</article>
+	-->
+	<footer class="row">
+		<p class="twelvecol last">
+		&copy; 2011 <a href="https://anpret.com">Anpret</a> &mdash; Built on the <a href="http://untappd.com/api">Untappd API</a>
+		</p>
+	</footer>
+</body>
+</html>
