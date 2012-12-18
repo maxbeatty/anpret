@@ -605,6 +605,6 @@ audio { background-color: #333; }
   margin-top: -4px;
 }
 
-.post article + article {
-  margin-top: 3em;
+[id^="podcast"] {
+  padding-top: 3em;
 }
