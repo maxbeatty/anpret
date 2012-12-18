@@ -185,7 +185,7 @@ mark {background-color: #4e4ea3; color: #000; font-style: italic; font-weight: b
 /************************************************************************/
 /* Header */
 /************************************************************************/
-header#top {
+header {
   position: fixed;
   top: 0; left: 0;
   z-index: 100;
@@ -216,40 +216,34 @@ margin-right: 400px;
     letter-spacing: 0.2em;
   }
   /* main nav */
-  #top nav {
+  .nav {
     float: left;
   }
-    #top nav ul li {
+    .nav li {
       display: list-item;
       float: left;
       height: 30px;
       padding-top: 2px;
       margin-right: 15px;
     }
-    #top nav ul li a,
-    #footer li a,
-    #mc_embed_signup p a {
+    .nav a,
+    #footer li a {
       color: #cececf;
       text-decoration: none;
       line-height: 30px;
       opacity: 0.5;
       text-shadow: 0 0 1px rgba(255, 255, 255, 0.1);
     }
-    #top li.current_page_item > a,
-    #top li.current-menu-ancestor > a,
-    #top li.current-menu-item > a { 
+    .active a { 
       opacity: 1; 
       border-bottom: 1px dashed #bd1421; 
       padding-bottom: 2px;
     }
-    #top nav ul li a:hover,
-    #footer li a:hover,
-    #mc_embed_signup p a:hover {
+    .nav a:hover,
+    #footer li a:hover {
       opacity: 1;
     }
-    #top nav ul ul {
-      display: none; /* fix in future for multi-level nav */
-    }
+    
   /* search form */
   #searchform {
     float: left;
