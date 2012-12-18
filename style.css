@@ -440,7 +440,7 @@ aside.double {
   
   blockquote {
     background: #eff0fb url('img/quote.png') 5px 2px no-repeat;
-    padding: 1em 1.5em 0.1em;
+    padding: 1em 1.5em;
     margin-bottom: 0.75em;
     font-size: 1em;
     font-style: italic;
