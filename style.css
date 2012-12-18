@@ -397,13 +397,13 @@ aside.double {
     margin-bottom: 1em;
   }
   .entry-content h1, .post h1, .page h1,
-  .entry-content h2, .post h2,
+  .entry-content h2,
   .entry-content h3, .post h3,
   .entry-content h4, .post h4,
   .entry-content h5, .post h5,
   .entry-content h6, .post h6 { margin-bottom: 0.5em; font-weight: bold;}
   .entry-content h1 { font-size: 1.75em;}
-  .entry-content h2, article h2, .post h2 {
+  .entry-content h2, article h2 {
     font-family: "Maven Pro", sans-serif;
     font-weight: 400;
     font-size: 1.5em;
@@ -599,6 +599,10 @@ audio { background-color: #333; }
   margin-top: -4px;
 }
 
-[id^="podcast"] {
+h2[id^="podcast"] {
   padding-top: 3em;
+}
+
+#podcast-ep1 {
+  padding-top: 1.5em;
 }
